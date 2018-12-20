@@ -15,6 +15,10 @@ gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'knife-solo',          '~> 0.6.0'
+gem 'knife-solo_data_bag', '~> 2.1.0'
+gem 'berkshelf',           '~> 6.3.1'
+gem 'chef', '~> 12.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
