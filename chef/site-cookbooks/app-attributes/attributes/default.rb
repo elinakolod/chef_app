@@ -43,5 +43,7 @@ override['nginx']['source']['checksum'] = 'beb732bc7da80948c43fd0bf94940a21a21b1
 
 # Monit -----------------------------------------------------------
 
-override['monit']['username'] = 'USERNAME'
-override['monit']['password'] = 'PASSWORD'
+monit_configs = Chef::EncryptedDataBagItem.load('configs', node.environment)['monit']
+
+override['monit']['username'] = monit_configs['username']
+override['monit']['password'] = monit_configs['password']
