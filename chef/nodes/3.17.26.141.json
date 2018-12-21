@@ -1,7 +1,9 @@
 {
-  "name": "spree-app",
+  "name": "chef_app",
   "environment": "dev",
-  "run_list": [],
+  "run_list": [
+    "role[setup]"
+  ],
   "automatic": {
     "ipaddress": "3.17.26.141"
   }
