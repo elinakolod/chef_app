@@ -7,4 +7,5 @@ run_list 'recipe[app-redis]',
          'recipe[app-imagemagick]',
          'recipe[app-nginx]',
          'recipe[app-monit::redis]',
-	       'recipe[app-monit::nginx]'
+         'recipe[app-monit::nginx]',
+         'recipe[app-monit::puma]'
