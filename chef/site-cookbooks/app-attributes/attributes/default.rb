@@ -25,3 +25,8 @@ override['postgresql']['databases'] = [{
   'name' => "#{node['project']['name']}_#{node['environment']}",
   'owner' => node['project']['name']
 }]
+
+# Ruby -----------------------------------------------------------
+
+override['ruby']['versions'] = ['2.5.3']
+override['ruby']['default'] = '2.5.3'
