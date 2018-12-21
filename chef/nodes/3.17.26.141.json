@@ -1,5 +1,5 @@
 {
-  "name": "chef_app",
+  "name": "chef-app",
   "environment": "dev",
   "run_list": [
     "role[setup]",
