@@ -19,3 +19,8 @@ users_attributes.each do |attributes|
     action :create
   end
 end
+
+users_attributes = [
+  node['users']['system']['nginx'],
+  node['users']['system']['application']
+]
