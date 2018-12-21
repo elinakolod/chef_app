@@ -1,0 +1,9 @@
+{
+  "id": "deployer",
+  "password": "$1$pLkeCZ5O$zKvLFmXDtQhhB3Ur6ual71",
+  "ssh_keys": [
+    "AAAAB3NzaC1yc2EAAAADAQABAAABAQCkld/Pr5yn61vmycO17LI4g9a+DeKPtes8IX7E1L95Y1elzHoa9xGOzxmEVqmIQrL1kLniXagDmot+5MyKVz/oveBEdIh41a/2pujS+SFiWGCS1k/Ey/7PVJ66ThfAjAnyfb8HauRdU6RA0FE2wcDnQYAQnNFmQoSMwvYjDtpED1lU2d3mdzukrFM85RgMhU7chkBOSCjoGo4GXDALeabuX1p2BrI6J8N8I4nj4NEfGssHH0LVxt+LoloDoKWNS2FJ2pE8x2e/gNafQn27iQOIehQBPR72FVoRCb9W92TUH/XAPkYuPNq5skxghSUqKOnZOJ6npGbNb4zUAtpOKs+z"
+  ],
+  "groups": ["sudo" ,"sysadmin", "www-data"],
+  "shell": "\/bin\/bash"
+}

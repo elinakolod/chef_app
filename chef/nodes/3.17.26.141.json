@@ -1,0 +1,8 @@
+{
+  "name": "spree-app",
+  "environment": "dev",
+  "run_list": [],
+  "automatic": {
+    "ipaddress": "3.17.26.141"
+  }
+}
