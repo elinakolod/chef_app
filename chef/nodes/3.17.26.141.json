@@ -5,7 +5,8 @@
     "role[setup]",
     "role[database]",
     "role[web]",
-    "role[security]"
+    "role[security]",
+    "role[deploy]"
   ],
   "automatic": {
     "ipaddress": "3.17.26.141"
