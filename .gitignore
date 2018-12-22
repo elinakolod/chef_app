@@ -23,3 +23,4 @@
 /cookbooks/
 /spree_dev.pem
 /chef/encrypted_data_bag_secret
+/chef/site-cookbooks/app-deploy/files/default
