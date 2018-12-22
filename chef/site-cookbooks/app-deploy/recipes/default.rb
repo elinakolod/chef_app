@@ -68,3 +68,13 @@ template File.join(config_path, 'database.yml') do
   group deployer_group
   mode 0o644
 end
+
+# Application ---------------------------------------------------------------------------------------------------------
+
+file File.join(config_path, 'application.yml') do
+  content Hash[node.environment, encrypted_data['application']].to_yaml
+  sensitive true
+  owner deployer
+  group deployer_group
+  mode 0o644
+end
