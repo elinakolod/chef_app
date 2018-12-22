@@ -78,3 +78,16 @@ file File.join(config_path, 'application.yml') do
   group deployer_group
   mode 0o644
 end
+
+# Puma ---------------------------------------------------------------------------------------------------------
+
+template File.join(shared_path, 'puma.rb') do
+  source File.join(node.environment, 'puma.rb.erb')
+  variables(
+    environment: node.environment,
+    project_root: root_path
+  )
+  owner deployer
+  group deployer_group
+  mode 0o644
+end
