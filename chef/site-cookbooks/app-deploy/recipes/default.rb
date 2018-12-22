@@ -52,3 +52,19 @@ end
     recursive true
   end
 end
+
+# DB ---------------------------------------------------------------------------------------------------------
+
+template File.join(config_path, 'database.yml') do
+  source File.join(node.environment, 'database.yml.erb')
+  variables(
+    environment: node.environment,
+    database: encrypted_data['database']['name'],
+    user: encrypted_data['database']['user'],
+    password: encrypted_data['database']['password']
+  )
+  sensitive true
+  owner deployer
+  group deployer_group
+  mode 0o644
+end
