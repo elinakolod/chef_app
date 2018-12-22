@@ -91,3 +91,16 @@ template File.join(shared_path, 'puma.rb') do
   group deployer_group
   mode 0o644
 end
+
+# Sidekiq ---------------------------------------------------------------------------------------------------------
+
+template File.join(config_path, 'sidekiq.yml') do
+  source File.join(node.environment, 'sidekiq.yml.erb')
+  variables(
+    environment: node.environment
+  )
+  sensitive true
+  owner deployer
+  group deployer_group
+  mode 0o644
+end
