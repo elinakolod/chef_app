@@ -7,4 +7,3 @@ encrypted_data_bag_secret "encrypted_data_bag_secret"
 
 knife[:berkshelf_path] = "cookbooks"
 Chef::Config[:ssl_verify_mode] = :verify_peer if defined? ::Chef
-knife[:editor] = "nano"
