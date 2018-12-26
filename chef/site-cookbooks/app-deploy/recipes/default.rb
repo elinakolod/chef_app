@@ -69,6 +69,19 @@ template File.join(config_path, 'database.yml') do
   mode 0o644
 end
 
+# MASTER_KEY ---------------------------------------------------------------------------------------------------------
+
+template File.join(config_path, 'master.key') do
+  source File.join(node.environment, 'master.key.erb')
+  variables(
+    master_key: encrypted_data['application']['MASTER_KEY'],
+  )
+  sensitive true
+  owner deployer
+  group deployer_group
+  mode 0o644
+end
+
 # Application ---------------------------------------------------------------------------------------------------------
 
 file File.join(config_path, 'application.yml') do
