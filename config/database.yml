@@ -33,5 +33,3 @@ test:
 production:
   <<: *default
   database: chef_app
-  username: ChefApp
-  password: <%= ENV['CHEFAPP_DATABASE_PASSWORD'] %>

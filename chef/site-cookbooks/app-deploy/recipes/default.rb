@@ -74,7 +74,7 @@ end
 template File.join(config_path, 'master.key') do
   source File.join(node.environment, 'master.key.erb')
   variables(
-    master_key: encrypted_data['application']['MASTER_KEY'],
+    master_key: encrypted_data['application']['MASTER_KEY']
   )
   sensitive true
   owner deployer
@@ -132,7 +132,8 @@ timestamped_deploy node['domain_name'] do
   # Set global environments
   environment(
     'HOME' => home_path,
-    'RAILS_ENV' => node.environment
+    'RAILS_ENV' => node.environment,
+    'RAILS_MASTER_KEY' => encrypted_data['application']['MASTER_KEY']
   )
 
   # Before you start to run the migration, create tmp and public directories.
@@ -141,6 +142,7 @@ timestamped_deploy node['domain_name'] do
   # Map files in a shared directory to their paths in the current release directory.
   symlinks(
     'config/application.yml' => 'config/application.yml',
+    'config/master.key' => 'config/master.key',
     'config/database.yml' => 'config/database.yml',
     'config/newrelic.yml' => 'config/newrelic.yml',
     'config/sidekiq.yml' => 'config/sidekiq.yml',
