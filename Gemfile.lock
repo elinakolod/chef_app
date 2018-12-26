@@ -384,7 +384,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   knife-solo (= 0.7.0.pre)
   knife-solo_data_bag (~> 2.1.0)
-  listen (>= 3.0.5, < 3.2)
+  listen (~> 3.1.5)
   net-ssh (= 4.2.0)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)

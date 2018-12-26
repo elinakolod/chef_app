@@ -20,13 +20,13 @@ gem 'knife-solo_data_bag', '~> 2.1.0'
 gem 'berkshelf',           '~> 6.3.1'
 gem 'chef', '~> 12.0'
 gem 'net-ssh', '4.2.0'
+gem 'listen', '~> 3.1.5'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
