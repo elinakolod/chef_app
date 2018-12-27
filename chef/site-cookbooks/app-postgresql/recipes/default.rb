@@ -11,7 +11,7 @@ databases = node['postgresql']['databases']
 general_hba = [
   { type: 'host', database: 'all', user: 'all', address: '::1/128', method: 'md5' },
   { type: 'host', database: 'all', user: 'all', address: '127.0.0.1/32', method: 'md5' },
-  { type: 'local', database: 'all', user: 'postgres', address: '', method: 'peer' }
+  { type: 'local', database: 'all', user: 'all', address: '', method: 'peer' }
 ]
 
 # Authentication settings for the user
