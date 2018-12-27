@@ -1,3 +1,5 @@
+encrypted_data = Chef::EncryptedDataBagItem.load('configs', node.environment)
+
 # Project -------------------------------------------------------
 
 override['project']['name'] = 'chef-app'
@@ -16,14 +18,14 @@ override['postgresql']['users'] = [{
   'encrypted_password' => 'md5ff74e976a4bc9e04160534427b3af341',
   'superuser' => true
 }, {
-  'name' => node['project']['name'],
-  'encrypted_password' => 'md5ff74e976a4bc9e04160534427b3af341',
+  'name' => encrypted_data['database']['user'],
+  'encrypted_password' => encrypted_data['database']['password'],
   'superuser' => false # the user of the project's database must have access only to the project database
 }]
 
 override['postgresql']['databases'] = [{
-  'name' => "#{node['project']['name']}_#{node['environment']}",
-  'owner' => node['project']['name']
+  'name' => "#{encrypted_data['database']['name']}_#{node['environment']}",
+  'owner' => encrypted_data['database']['user']
 }]
 
 # Ruby -----------------------------------------------------------

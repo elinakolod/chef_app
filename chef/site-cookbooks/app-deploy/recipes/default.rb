@@ -105,6 +105,19 @@ template File.join(config_path, 'sidekiq.yml') do
   mode 0o644
 end
 
+# MasterKey ---------------------------------------------------------------------------------------------------------
+
+template File.join(config_path, 'master.key') do
+  source File.join(node.environment, 'master.key.erb')
+  variables(
+    master_key: encrypted_data['application']['MASTER_KEY']
+  )
+  sensitive true
+  owner deployer
+  group deployer_group
+  mode 0o644
+end
+
 # DEPLOYMENT ----------------------------------------------------------------------------------------------------------
 
 timestamped_deploy node['domain_name'] do
@@ -128,6 +141,7 @@ timestamped_deploy node['domain_name'] do
 
   # Map files in a shared directory to their paths in the current release directory.
   symlinks(
+    'config/master.key' => 'config/master.key',
     'config/application.yml' => 'config/application.yml',
     'config/database.yml' => 'config/database.yml',
     'config/newrelic.yml' => 'config/newrelic.yml',
