@@ -18,18 +18,24 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: chef_app
-  password: '123456'
-  host: localhost
 
 development:
   <<: *default
   database: chef_app
+  username: chef_app
+  password: '123456'
+  host: localhost
 
 test:
   <<: *default
   database: chef_app_test
+  username: chef_app
+  password: '123456'
+  host: localhost
 
 production:
   <<: *default
   database: chef_app
+  username: chef_app
+  password: '123456'
+  host: localhost
