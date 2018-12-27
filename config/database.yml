@@ -9,10 +9,6 @@ development:
   <<: *default
   database: chef_app
 
-dev:
-  <<: *default
-  database: chef_app
-
 test:
   <<: *default
   database: chef_app_test
