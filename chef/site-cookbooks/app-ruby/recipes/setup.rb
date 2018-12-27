@@ -1,4 +1,4 @@
-user = node['project']['user']
+user = node['project']['name']
 attributes = node['ruby']
 
 # Install the required versions of Ruby
